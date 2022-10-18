@@ -1,0 +1,12 @@
+body {
+  background-color: rgba(241, 236, 236, 0.884);
+  font-size: small;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+}
+
+a {
+  color:white;
+}

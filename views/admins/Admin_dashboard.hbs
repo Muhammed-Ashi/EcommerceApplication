@@ -1,0 +1,142 @@
+<head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+</head>
+
+  <div class="row" style="margin-left:3% ; margin-top:4% ; margin-right:3% ;">
+    
+    <div class="col-lg-2 " style=" background-color:#5e1027; position:  ; ">
+      <div>
+        <h1 style="font-size: 150%; color:white ;" >DeoStore</h1> 
+      </div> <br>
+      <h3 class="Font" style="font-size: 150%;"><a href="/admin">Dashboard</a></h3>
+      <br><br>
+
+      <h3 style="font-size: 150%;"> <a href="admin/GetUsers">User
+          Management</a></h3>
+      <br><br>
+
+      <h3 style="font-size: 150%;"> <a href="admin/ProductManagement">Product
+          Management</a></h3>
+      <br><br>
+
+      <h3 style="font-size: 150%;"> <a onclick="bb()" href="">Category
+          Management</a></h3>
+      <br><br>
+      <h3 style="font-size: 150%;"> <a  href="admin/offer">Offer
+          Management</a></h3>
+      <br><br>
+      <h3 style="font-size: 150%;"> <a href="">Sales
+          Reports</a></h3><br><br>
+
+      <h3 style="font-size: 150%; "> <a href="">About
+        </a></h3>
+
+    </div>
+<div class="col-lg-10" style=" background-color: #e7e4e5;overflow: visible; ">
+   <h1>Dashboard</h1><br>
+   
+  <div class="row" style=";">  
+  <div class="col-lg-2" style=" background-color:#5e1027;padding-left: 3% ;margin-left: 1%; " >
+      <h6 style=" color:white ;">TotalSales</h6>
+      <h5 style="color:rgb(118, 118, 180) ;">738537</h5>
+    </div>
+    
+    <div class="col-lg-2"  style=" background-color: #5e1027; padding-left: 3%; margin-left:1%;">
+      <h6 style="color:white ;">TotalOrders</h6>
+      <h5 style="color:rgb(118, 118, 180) ;">738537</h5>
+    </div>
+     <div class="col-lg-2"  style=" background-color: #5e1027; padding-left: 3%; margin-left:1%;">
+      <h6 style="color:white ;">TotalProducts</h6>
+      <h5 style="color:rgb(118, 118, 180) ;">738537</h5>
+    </div>
+    </div>
+
+    <div class="container">
+      <div class="row ">
+        <div class="col-lg-11">
+     <canvas id="myChart" width="360" height="150"></canvas>
+        </div>
+  
+
+      </div>
+    </div>
+
+
+  
+</div>
+
+
+ 
+  </div>
+
+
+ </div>
+
+<style>
+  .text {
+    text-decoration-color: aliceblue;
+  }
+</style>
+
+
+<script>
+  const ctx = document.getElementById('myChart');
+   
+
+
+  const myChart = new Chart(ctx, {
+    
+    type: 'bar',
+    data: {
+        labels: ['jan', 'feb', 'March', 'April', 'May', 'June', 'july','aug','sep','oct','nov','dec'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3,9],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+ 
+
+
+
+</script>
+

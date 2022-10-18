@@ -1,0 +1,129 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+
+<button>
+	<a href="/cart-page">cart</a>
+</button>
+<div style="width: 15%;" class="dropdown" id="dropdown-link">
+	{{#if UserSession}}
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+		aria-haspopup="true" aria-expanded="false">
+		{{UserSession}}
+	</button>
+	{{else}}
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+		aria-haspopup="true" aria-expanded="false">
+		Login
+	</button>
+	{{/if}}
+	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		<a class="dropdown-item" href="/login">Login</a>
+		<a class="dropdown-item" href="/signup">sign up</a>
+		<a class="dropdown-item" href="/logout">Logout</a>
+	</div>
+
+</div>
+
+<div class="dropdown">
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+		aria-haspopup="true" aria-expanded="false">
+		Categories
+	</button>
+	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		<a class="dropdown-item" href="/CategoryView/Men">Mens Fasion</a>
+		<a class="dropdown-item" href="/CategoryView/Women">Womans Fasion</a>
+		<a class="dropdown-item" href="/CategoryView/kids">Kids Fasion</a>
+		<a class="dropdown-item" href="/CategoryView/MobilePhone">MobilePhone</a>
+	</div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="trending">
+	<h1>iam offer product animation</h1>
+	<h1>product offer sliding space</h1>
+</div>
+<br>
+
+<div></div>
+<button><a href="/UserProfile">UserProfile</a></button>
+<h1>products</h1>
+{{#each products}}
+<a href="/ProductProfile/{{_id}}">
+
+	<div class="product-card">
+
+		<div class="container">
+
+			<br>
+			<br>
+			
+			<div class="row">
+				<div class="col-md-3">
+					<div class="dress-card">
+						<div class="dress-card-head">
+							<img class="dress-card-img-top" src="/images/{{Image.[0]}}" alt="">
+							<div class="surprise-bubble"><span class="dress-card-heart">
+									<i class="fas fa-heart"></i>
+								</span><a href="#"> <span>More</span></a></div>
+						</div>
+						<div class="dress-card-body">
+							<h4 class="dress-card-title">{{product.name}}</h4>
+							<p class="dress-card-para">Womans printed clothing</p>
+							<p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span
+									class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60%
+									OFF)</span></p>
+							<div class="row">
+								<button onclick="AddToCart('{{_id}}', '{{product.price}}')">add to cart</button>
+								<div class="col-md-6 card-button"><a href="">
+										<div class="card-button-inner wish-button">Whishlist</div>
+									</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</a>
+{{/each}}
+
+
+<script>
+	function AddToCart(ProductId, ProductPrice) {
+
+		$.ajax({
+			url: "/cart",
+			dataType: 'json',
+			data: {
+				ProductId: ProductId,
+				ProductPrice: ProductPrice,
+			},
+			method: "post",
+			success: (response) => {
+				res.json(true)
+			}
+		})
+
+
+
+	}
+  function ProductPage(ProductId){
+	console.log(ProductId,"jiawf")
+	$.ajax({
+		url:'/ProductProfile',
+		dataType:'json',
+		data:{
+			ProductId:ProductId
+		},
+		method:'get',
+		
+	})
+  }
+
+</script>

@@ -1,0 +1,37 @@
+<h2>Advanced Data Structures & Algorithms Course</h2>
+	<h3>Description</h3>
+
+	<ul>
+		<li>Best Course for SDE placements</li>
+		<li>
+			Available in 4 major Languages JAVA,
+			C/C++, Python, Javascript
+		</li>
+		<li>Lifetime Access</li>
+	</ul>
+
+	<span> Cost:- 499 Rupees
+		<button id="pay-button" onclick="GenerateOrder()" >
+			Pay Now & Get Access
+		</button>
+	</span>
+     <script>
+         function GenerateOrder(){
+             
+              $.ajax({
+      url: "/GenerateRequset",
+      dataType: "json",
+      data: {
+         "amount":"400",
+          "currency":"INR",
+          "reciept":"jsfhw",
+          "notes":"best"
+
+      },
+      method: "post",
+      success: (resp) => { }
+
+    })
+              
+         }
+     </script>

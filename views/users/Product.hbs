@@ -1,0 +1,299 @@
+<!-- Or from a CDN -->
+<script src="https://unpkg.com/js-image-zoom/js-image-zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-image-zoom/js-image-zoom.min.js"></script>
+<div class="row" style="margin-right: ;margin-left: ;">
+    <div class="col-lg-12" style="background-color: rgb(73, 46, 46); ;">
+        <div class="row">
+            <div class="col-lg-3">
+                <h1><a href="/" style="color: white;">DeoStore</a>
+            </h1 >
+            </div>
+
+            <div class="col-lg-4">
+                <div class="input-group" style="padding-top: 3%;">
+                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                        aria-describedby="search-addon" />
+                    <button type="button" class="btn btn-danger" style="background-color: rgb(73, 46, 46); ">search</button>
+                </div>
+            </div>
+
+            
+        <div class="col-lg-2">
+            <div class="row">
+                <div class="col-lg-12" style="padding-top:0px ;">
+                    <button  type="button  "
+                        style=" margin-top: 2%; background-color:  rgb(73, 46, 46);border-color:white;  cursor: pointer; border-radius: 30%;  color:white ;">
+                        <svg style="color:white ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                        </svg>
+                        <span class="badge badge-light">9</span>
+                        <br><a href="/cart-page" style="color: aliceblue ;"> Cart</a>
+</button>
+                        <button class="y" style="  border-color: aliceblue; border-radius: 30%; position: relative;
+                 
+                 
+                 ; background-color:rgb(73, 46, 46); ; margin-left: 59px; color:white ;" type="button">
+                            <span style="  color:white ; width: 10%;"></span><span
+                                class="badge badge-light">9</span><br>
+                            <span class="sr-only">unread messages</span>
+                            whishlist</button>
+                    
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+            <div class="col-lg-1" style="padding-left: 10%;">
+
+                <div class="dropdown show" style=" height: ; max-width: 20%;">
+                    <a style="background-color:rgb(73, 46, 46);" class="btn btn-secondary dropdown-toggle"
+                        href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <span><img style="width: 35%; margin-bottom: ;" src="images/NicePng_chen-png_3026464.png"
+                                alt=""></span><br> <span style="margin-left: 13%;">Logged</span>
+                    </a>
+
+                    <div style="background-color:rgb(73, 46, 46); margin-right: 70px;  width: 10ch% "
+                        class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a style="background-color:rgb(73, 46, 46) ; color: white;" class="dropdown-item" href="/UserProfile">MyAccount</a>
+                        <a class="dropdown-item" style="color: white;" href="/Logout">Logout</a>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div class="row" style=" background-color:">
+    <div class="col-lg-5" style="margin-top: 1%; margin-left: 5%;  background-color: white; ">
+        <div class="row">
+
+            <div class="col-lg-2"
+                style=" margin-top: 10%; background-color:rgba(32, 31, 31, 0.747); border-style:double ; height: 300%;">
+                <div class="row" style="border-style: groove ;"><img id="FirstImage" style="width: 100%;"
+                        src="/images/{{Product.Image.[0]}}" alt=""></div>
+                <div class="row"><img id="SecondImage" style="width:100%;border-style: groove ;"
+                        src="/images/{{Product.Image.[1]}}" alt="">
+                </div>
+                <div class="row"><img id="ThirdImage" style="width: 100%;border-style: groove ;"
+                        src="/images/{{Product.Image.[2]}}" alt="">
+                </div>
+
+            </div>
+            <div id="img-container" class="col-lg-9" style="border-style: ;"> <img id="y" style="border-style: groove; 
+            " src="/images/{{Product.Image.[0]}}" alt=""></div>
+
+        </div>
+        <div class="row" style="margin-top: 3%;">
+            <div class="col-lg-4" style=" margin-left: 27%;">
+                <button onclick="AddToCart('{{Product._id}}', '{{Product.product.price}}')" class="btn btn-primary">Add to Cart</button>
+            </div>
+            <div class="col-lg-4" style=" margin-left:% ;">
+                <button class="btn btn-danger" style=>Buy Now</button>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-6" id="divhide" style="background-color:white; margin-top:1% ;">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3> {{Product.product.name}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>₹{{Product.product.price}} </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12"> <button
+                    style="background-color: rgb(16, 44, 16); width: 5%; border-radius: 100%;  "><span
+                        style="margin-right: 50px;"><img style="width: 100%;" src="/images/images.png" alt="">
+                    </span><span style=" color: white;">4</span></button> 3,07,534 ratings and 35,754 reviews </div>
+            <img id="yyy" src="" alt="">
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h6>Available offers</h6><br>
+
+                <h6>Partner Offer </h6> Buy this product and Get Extra 10% Up to ₹500 off on Home & Kitchen Appliances
+                <a style="color: blue;" href="">Know More</a> <br>
+                Sign up for Flipkart Pay Later and get Flipkart Gift Card worth upto ₹500* <a style="color: blue;"
+                    href="">Know more</a><br>
+                5% Cashback on Flipkart Axis Bank CardT&C <a style="color: blue;" href="">know more</a> <br>
+                Purchase this product & win a surprise cashback coupon for The Big Billion Days Sale 2022 <a
+                    style="color: blue;" href="">Know more</a>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="">
+                    <h5 style="color: rgb(65, 65, 65);"> <span><img src="/images/download.svg" alt=""></span> Deliver to
+                    </h5>
+                    <input type="text" name="" id="" placeholder="Enter Delivery pincode">
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div>
+                    <h5>Usually delivered in 7 days</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-1">
+                <h6 style="margin-top: 17%;">Size</h6>
+            </div>
+
+            <div class="col-lg-2" style="">
+                <button style="border-color: rgb(75, 29, 29); border-radius: 20%;">
+                    <h6>S</h6>
+                </button>
+            </div>
+
+
+            <div class="col-lg-2">
+                <button style="border-color: rgb(75, 29, 29);  border-radius: 20%;">
+                    <h6>M</h6>
+                </button>
+            </div>
+
+            <div class="col-lg-2">
+                <button style="border-color: rgb(75, 29, 29);  border-radius: 20%;">
+                    <h6>L</h6>
+                </button>
+            </div>
+
+
+            <div class="col-lg-2">
+                <button style="border-color: rgb(75, 29, 29);  border-radius: 20%;">
+                    <h6>XL</h6>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+
+<script>var options = {
+        // required
+        // more options here
+        width: 400,
+        height: 400,
+        zoomWidth: 200,
+
+        zoomPosition: 'right',
+        offset: {
+            vertical: 10,
+            horizontal: 10,
+            scale: 1,
+        }
+
+    };
+    new ImageZoom(document.getElementById("img-container"), options);</script>
+
+
+<script>
+    $(document).ready(function () {
+
+        $("#FirstImage").mouseover(function () {
+
+            var Image = $("#FirstImage")[0].src
+            // var ImageStringfy=JSON.stringify(Image)
+            // var str=ImageStringfy.replace()
+            document.getElementById("y").src = Image
+            new ImageZoom(document.getElementById("img-container"), options)
+
+            console.log(Image)
+
+        })
+
+        $("#SecondImage").mouseover(function () {
+
+            var Image = $("#SecondImage")[0].src
+            // var ImageStringfy=JSON.stringify(Image)
+            // var str=ImageStringfy.replace()
+            document.getElementById("y").src = Image
+            new ImageZoom(document.getElementById("img-container"), options)
+
+
+            console.log(Image)
+
+        })
+
+        $("#ThirdImage").mouseover(function () {
+
+            var Image = $("#ThirdImage")[0].src
+            // var ImageStringfy=JSON.stringify(Image)
+            // var str=ImageStringfy.replace()
+            document.getElementById("y").src = Image
+            new ImageZoom(document.getElementById("img-container"), options)
+
+            console.log(Image)
+
+        })
+
+
+
+
+    })
+
+    $("#img-container").mouseover(function () {
+        $("#divhide").hide()
+    })
+    $("#img-container").mouseleave(function () {
+        $("#divhide").show()
+    })
+
+
+
+	function AddToCart(ProductId, ProductPrice) {
+
+		$.ajax({
+			url: "/cart",
+			dataType: 'json',
+			data: {
+				ProductId: ProductId,
+				ProductPrice: ProductPrice,
+			},
+			method: "post",
+			success: (response) => {
+				res.json(true)
+			}
+		})
+
+
+
+	}
+
+</script>
+
+
+    
+

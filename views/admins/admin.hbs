@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css" href="/css/productadminside.css" />
+<a class="btn btn-danger" id="Addproduct" href="admin/addProduct">AddProduct</a>
+{{#each products}}
+  
+  <div class="admin-side-productlisting">
+<div class="row">
+      <div class="col-md-3">
+        <div class="dress-card">
+         
+         <button class="btn btn-danger" onclick="DeleteProduct('{{_id}}')">Delete</button>
+        
+          <div class="dress-card-head">
+          
+            <img class=""src="/images/{{Image.[0]}}" alt=" ">
+            <div class="surprise-bubble"><span class="dress-card-heart">
+                <i class="fas fa-heart"></i>
+              </span><a href="#"> <span>More</span></a></div>
+          </div>
+
+          <div class="dress-card-body">
+            <h4 class="dress-card-title">{{product.name}}</h4>
+            <p class="dress-card-para">Womans printed clothing</p>
+            <p class="dress-card-para"><span class="dress-card-price">Rs.839 &ensp;</span><span class="dress-card-crossed">Rs.2099</span><span class="dress-card-off">&ensp;(60% OFF)</span></p>
+            <div class="row">
+              <div class="col-md-6 card-button"><a href=""><div class="card-button-inner bag-button">Add to Bag</div></a></div>
+              <div class="col-md-6 card-button"><a href=""><div class="card-button-inner wish-button">Whishlist</div></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+    </div>
+
+</div>
+{{/each}}
+
+<script>
+  function DeleteProduct(ProductId){
+    console.log(ProductId)
+    $.ajax({
+      url:'/admin/Delete',
+      data:{
+        ProductId:ProductId,
+      },
+      method:'post',
+      success:()=>{}
+    })
+  }
+</script>
+
+
+    
+

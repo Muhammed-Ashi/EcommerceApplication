@@ -1,0 +1,84 @@
+<div class="row" style="margin-right: ;margin-left: ;">
+    <div class="col-lg-12" style="background-color: rgb(73, 46, 46); ;">
+        <div class="row">
+            <div class="col-lg-3">
+                 <h1><a href="/" style="color: white;margin-left:9% ">DeoStore</a>
+            </h1 >
+            </div>
+
+            <div class="col-lg-6">
+                <div class="input-group" style="padding-top: 3%;">
+                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                        aria-describedby="search-addon" />
+                    <button type="button" class="btn btn-danger" style="background-color: rgb(73, 46, 46); ">search</button>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3" style="padding-left: 10%;">
+
+                <div class="dropdown show" style=" height: ; max-width: 20%;">
+                    <a style="background-color:rgb(73, 46, 46);" class="btn btn-secondary dropdown-toggle"
+                        href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <span><img style="width: 35%; margin-bottom: ;" src="images/NicePng_chen-png_3026464.png"
+                                alt=""></span><br> <span style="margin-left: 13%;">Logged</span>
+                    </a>
+
+                    <div style="background-color:rgb(73, 46, 46); margin-right: 70px;  width: 10ch% "
+                        class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a style="background-color:rgb(73, 46, 46) ; color:white ;" class="dropdown-item" href="/UserProfile">MyAccount</a>
+                        <a class="dropdown-item" style="color: white;" href="/Logout">Logout</a>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12" style="background-color:white ;">
+      <div style="margin-left: 35%;" >
+        <h1>{{Products.[0].product.Category}}'s Collections</h1>
+      </div>
+    </div>
+</div>
+
+
+    
+
+
+<div class="row "   style="padding-left: ; margin-top: 1%; padding-right:20px ; padding-top: 5px;margin-right: 28px; margin-left: 1px ; padding-bottom: 10%;">
+  {{#each Products}}
+  <div class="col-lg-2" style=" margin-left:10% ;"  >
+<a href="/ProductProfile/{{_id}}" >
+  <div class="card" style="width: 18rem;"  >  
+   
+  <img id="s" class="card-img-top" src="/images/{{Image.[0]}}" alt="Card image cap">
+  
+  <div class="card-body">
+    <h5 class="card-title" style="color: black;">{{product.name}}</h5>
+    <p class="card-text" style="color:darkgray;">Light Blue</p>
+     <p class="card-text" ><h5 style="color: black;">₹{{product.price}}</h5></p>
+
+  
+      
+  
+  </div>
+</div>
+</a>
+
+  
+  </div>
+ {{/each}}
+</div>        
+
+
+
+    

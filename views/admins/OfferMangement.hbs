@@ -1,0 +1,88 @@
+<div class="row" style="margin-left: 2%; margin-top: 2%;">
+
+    <div class="col-lg-2 " style=" background-color:#5e1027; position:  ; ">
+        <div>
+            <h1 style="font-size: 150%; color:white ;">DeoStore</h1>
+        </div> <br>
+        <h3 class="Font" style="font-size: 150%;"><a href="/admin">Dashboard</a></h3>
+        <br><br>
+
+        <h3 style="font-size: 150%;"> <a href="/admin">User
+                Management</a></h3>
+        <br><br>
+
+        <h3 style="font-size: 150%;"> <a href="admin/ProductManagement">Product
+                Management</a></h3>
+        <br><br>
+
+        <h3 style="font-size: 150%;"> <a onclick="bb()" href="/admin">Category
+                Management</a></h3>
+        <br><br>
+        <h3 id="myBtn" style="font-size: 150%;"> <a style="
+        
+         pointer-events: none;
+  cursor: default;
+        
+        " href="/admin">Offer
+                Management</a></h3>
+        <br><br>
+        <h3 style="font-size: 150%;"> <a href="/admin">Sales
+                Reports</a></h3><br><br>
+
+        <h3 style="font-size: 150%; "> <a href="/admin">About
+            </a></h3>
+
+        <h3 id="test"></h3>
+
+    </div>
+    <div class="col-lg-10">
+        <div class="row">
+            <div class="col-lg-4">
+                <h1>AddProduct to carousal</h1>
+                <form class="form-horizontal" action="/admin/addCarousal" method="POST" enctype="multipart/form-data" >
+    <div class="form-group">
+      <label for="email">Image</label>
+         <input type="file"  class="form-control" name="img">
+
+            </div>
+
+             <div class="form-group">
+      <label for="email">Image</label>
+         <input type="file" class="form-control" name="img" >
+
+            </div>
+
+             <div class="form-group">
+      <label for="email">Image</label>
+         <input type="file" class="form-control"  name="img">
+
+            </div>
+
+            <button style=" margin-left:50%; background-color:#5e1027; color: antiquewhite; ">Submit</button>
+                </form>
+        </div>
+        <div class="col-lg-4">
+            <form action="/admin/AddOffer" method="post" enctype="application/x-www-form-urlencoded">
+            <h1>Add Product</h1>
+            <div class="form-group"></div>
+            <label for="">ProductName</label>
+            <input type="text" name="Name" class="form-control" >
+
+             <div class="form-group"></div>
+            <label for="">OfferPrice</label>
+                  <input type="text" name="Price" class="form-control" id="pwd" placeholder="" >
+             <br>
+             
+            <button type="submit"  style=" margin-left:50%; background-color:#5e1027; color: antiquewhite; "  >Submit</button>
+            </form>
+        </div>
+        
+
+        
+    </div>
+</div>
+
+
+<script>
+
+</script>

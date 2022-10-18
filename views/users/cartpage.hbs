@@ -1,0 +1,229 @@
+<div class="row" style="margin-right: ;margin-left: ;">
+    <div class="col-lg-12" style="background-color: rgb(73, 46, 46); ;">
+        <div class="row">
+            <div class="col-lg-3">
+                 <h1><a href="/" style="color: white;margin-left:9% ">DeoStore</a>
+            </h1 >
+            </div>
+
+            <div class="col-lg-6">
+                <div class="input-group" style="padding-top: 3%;">
+                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                        aria-describedby="search-addon" />
+                    <button type="button" class="btn btn-danger" style="background-color: rgb(73, 46, 46); ">search</button>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3" style="padding-left: 10%;">
+
+                <div class="dropdown show" style=" height: ; max-width: 20%;">
+                    <a style="background-color:rgb(73, 46, 46);" class="btn btn-secondary dropdown-toggle"
+                        href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <span><img style="width: 35%; margin-bottom: ;" src="images/NicePng_chen-png_3026464.png"
+                                alt=""></span><br> <span style="margin-left: 13%;">Logged</span>
+                    </a>
+
+                    <div style="background-color:rgb(73, 46, 46); margin-right: 70px;  width: 10ch% "
+                        class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a style="background-color:rgb(73, 46, 46) ; color: white;" class="dropdown-item" href="/UserProfile">MyAccount</a>
+                        <a class="dropdown-item" style="color: white;" href="/Logout">Logout</a>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div class="col-lg-4" style=" background-color: white; float:right  ; margin-right: 1%; margin-top: 5%; padding-bottom:3% ;">
+    <div style="margin-left: 10px;">
+        <h5 style="color: darkgray;">PRICE DETAILS</h5><hr>
+    
+            <h6>Price(1 item)  </h6>
+            <br><h6>Discount</h6>
+            <br><h6>Delivery Charges</h6>
+            <br><h6>Secured Packaging Fee</h6>
+            <hr>
+            <h4>Total Amount ₹<span id="Total" style="margin-left: 3%;" > {{CartItems.[0].Total}}</span>  </h4>
+           <hr>
+             <div style="padding-bottom:10% ; "><button  class="btn btn-danger" style="float: right; margin-right: 10%; "><a href="/address" style="color: black;">placeOrder</a></button></div>
+ 
+    </div>
+    
+</div>
+
+
+<div class="row">
+
+    <div class="col-lg-11" style="background-color: white; margin-left: 3%; margin-top: 1%;">
+        <div style=" margin-top: 1% ; margin-bottom: 7%;">
+            <button
+                style="   float: right; border-radius: 11%; box-shadow: 80ch; background-color: white; font-size: 130%; color:rgb(65, 40, 9) ;">Enter
+                Delivery Pincode</button>
+        </div>
+    </div>
+    
+
+     {{#each CartItems}}
+    <div class="col-lg-11" style="background-color: white; margin-top: 1%; margin-left: 3%;">
+        <div class="row">
+            <div class="col-lg-3">
+
+                <div class="" style="">
+                    <img style="width: 50%; margin-top:22% ;" src="/images/{{this.prs.Image.[0]}}" alt="">
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+                <h6>{{this.prs.product.name}} <br>Bue <br>amt fasion</h6>
+                <h5 class="" ><span class="{{this.item}}">₹{{this.Price}}</span></h5>
+            </div>
+            <div>Expected Delivery date</div>
+        </div>
+        <div style="margin-left: 30%; margin-top:5% ;margin-bottom: 6%;">
+            <div>
+                <button id="" onchange="AnimationPlaybackEvent" style="border-radius: 20% ; color: white; width: 12%; background-color: rgb(73, 46, 46); " onclick="Decrement('{{this.item}}','{{this._id}}','-1');PriceDecrement('{{this.item}}','{{this._id}}','{{this.prs.product.price}}')" >-</button><span id="{{this.item}}">{{this.quantity}}</span><button  id=""  onclick="Increment('{{this.item}}','{{this._id}}','+1');PriceIncrement('{{this.item}}','{{this._id}}','{{this.prs.product.price}}')" style="border-radius: 20% ; width: 12%;background-color: rgb(73, 46, 46);color: white;">+</button>
+
+            </div>
+            <div style="margin-top: 6%; margin-left:20px ;"><button style="border-radius: 10%; width:15% ; background-color:rgb(73, 46, 46) ;" > <h6 style="color: white; padding-top: 5px;">Remove</h6></button></div>
+        </div>
+
+
+
+       
+
+    </div>
+
+
+{{/each}}
+
+</div>
+
+
+<script>
+    
+    function Decrement(ProductId,CartId,Count){
+  console.log(ProductId,CartId,Count)
+    
+
+    $.ajax({
+			url: "/AddQuantity",
+			dataType: 'json',
+			data: {
+				ProductId: ProductId,
+				CartId:CartId,
+                Count:Count
+			},
+			method: "post",
+			success: (response) => {
+				 
+
+                   var Count= $('#'+ProductId).text()
+                console.log(Count,"undo")
+                var CountInt=parseInt(Count)
+                var Increment=CountInt-1
+                $('#'+ProductId).text(Increment)
+
+			}
+		})
+
+    
+    }
+
+     function Increment(ProductId,CartId,Count){
+  console.log(ProductId,CartId,Count)
+  $.ajax({
+			url: "/AddQuantity",
+			dataType: 'json',
+			data: {
+				ProductId: ProductId,
+				CartId:CartId,
+                Count:Count
+			},
+			method: "post",
+			success:(data)=>{
+                 console.log(data)
+                var Count= $('#'+ProductId).text()
+                console.log(Count,"undo")
+                var CountInt=parseInt(Count)
+                var Increment=CountInt+1
+                $('#'+ProductId).text(Increment)
+            }
+		})
+
+    }
+
+     function PriceIncrement(ProductId,CartId,Price){
+       console.log(ProductId)
+
+       $.ajax({
+			url: "/PriceIncrement",
+			dataType: 'json',
+			data: {
+				Productid: ProductId,
+				Cartid:CartId,
+                Price:Price
+			},
+			method: "post",
+			success:(data)=>{
+               
+                            var myArray=data.data.products
+                 var indexOfPrce = myArray.findIndex(i => i.item === ProductId);
+                  console.log(indexOfPrce)
+          $('.'+ProductId).text(data.data.products[indexOfPrce].Price)
+         
+              $('#Total').html(data.Total)
+
+            }
+		})
+
+
+     }
+
+
+     function PriceDecrement(ProductId,CartId,Price){
+       console.log(ProductId,CartId,Price)
+             var PriceInt=-Price             
+
+       $.ajax({
+			url: "/PriceIncrement",
+			dataType: 'json',
+			data: {
+				Productid: ProductId,
+				Cartid:CartId,
+                Price:PriceInt
+			},
+			method: "post",
+			success:(data)=>{
+                console.log(data)
+                  console.log(data.Total,"is it working")
+                    var myArray=data.data.products
+                 var indexOfPrce = myArray.findIndex(i => i.item === ProductId);
+                  console.log(indexOfPrce)
+          $('.'+ProductId).text(data.data.products[indexOfPrce].Price)
+                    $('#Total').html(data.Total)    
+
+                 
+            }
+		})
+
+
+     }
+
+     function Address(){
+         $.ajax({
+			url: "/address",
+			dataType: 'json',
+		
+            method:"get"
+			
+       
+     })
+     }
+</script>
