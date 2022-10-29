@@ -92,7 +92,10 @@ router.get('/signup', (req, res) => {
 router.post('/signup', (req, res) => {
   UserHelper.Signup(req.body).then((userID) => {
     // console.log(userID);
-    res.render('users/login')
+    if (userID){
+      res.redirect("/login")
+    }
+  
   })
   // console.log(req.body);
 })
@@ -115,10 +118,12 @@ router.get('/cart-page', (req, res) => {
   var UserId = req.session.userID._id
   UserHelper.TotalProductAmountFirst(UserId)
   UserHelper.CartItems(req.session.userID).then((CartItems) => {
+    var length=CartItems.length
 
-    res.render("users/cartpage", { CartItems, UserId })
+    res.render("users/cartpage", { CartItems, UserId,length })
+  
 
-    console.log(CartItems, "cartid che");
+    console.log(length, "cartid che");
 
 
 
@@ -211,7 +216,7 @@ router.post('/EditAddress', (req, res) => {
 
 
   })
-  console.log(req.body, "new");
+
 
 })
 router.get('/ChooseAddress/:id', (req, res) => {
@@ -236,7 +241,7 @@ router.get('/ChooseAddress/:id', (req, res) => {
   })
 
 router.post('/PlaceOrder', async (req, res) => {
-  console.log(req.body,"cadhhhhhhhhhhhhhhhhhh");
+ 
   var Address = await UserHelper.SelectAddress(req.session.userID._id)
   var TotalPrice = Address.Product[0].TotalPrice
   console.log(Address.Product[0].TotalPrice)
@@ -295,9 +300,11 @@ router.get('/CategoryView/:id', (req, res) => {
 router.get('/ProductProfile/:id', (req, res) => {
   console.log(req.params.id);
   var ProductId = req.params.id
-  UserHelper.ProductProfile(ProductId).then((Product) => {
-    console.log(Product, 'THIS IS FOR PRODUCT PROFILE')
-    res.render('users/Product', { Product })
+  UserHelper.ProductProfile(ProductId).then(async(Product) => {
+    let length= await UserHelper.CartItems(req.session.userID)
+    var Length=length.length
+    console.log(Product,Length ,'THIS IS FOR PRODUCT PROFILE')
+    res.render('users/Product', { Product,Length })
   })
 
 

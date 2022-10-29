@@ -46,7 +46,8 @@
      {{#each Unblocked }}
     
     <th>Email</th>
-     <th>Block/Unblock</th>
+     <th>Block</th>
+       <th>UnBlock</th>
    
   </tr>
      
@@ -55,7 +56,8 @@
    
  
     <td>{{this.email}}</td>
-    <td> <h6 style="color: red;" class="{{this._id}}"></h6 ><button style="border: #5e1027;color:rgb(141, 40, 40) ; border-style: double; color" id="{{this._id}}" onclick="BlockUser('{{this._id}}')">block</button></td>
+    <td> <h6 style="color: red;" class="{{this._id}}"></h6 ><button class="btn btn-danger" style="border: #5e1027;color:rgb(141, 40, 40) ; border-style: double; color" id="{{this._id}}" onclick="BlockUser('{{this._id}}')"><h6 style="color: white;">Block</h6></button></td>
+   <td> <h6 style="color: red;" ></h6 ><button class="btn btn-danger" style="border: #5e1027;color:rgb(141, 40, 40) ; border-style: double; color" ><h6 style="color: white;">Unblock</h6></button></td>
       
   </tr>
   {{/each}}  
@@ -63,9 +65,6 @@
 
 
 </div>
- <div style="margin-top: 7%;" class="col-lg-2">
-  <button class="btn btn-danger" >Unblock</button>
- </div>
 
         </div>
 

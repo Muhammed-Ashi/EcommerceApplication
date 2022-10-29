@@ -127,7 +127,7 @@ router.post("/Delete",(req,res)=>{
     console.log(ImageArray)
 
      ProductHelper.CarousalImage(ImageArray).then((data)=>{
-        res.redirect('admin/addCarousal')
+        res.redirect('/offer')
      })
  })
  router.post('/AddOffer',(req,res)=>{

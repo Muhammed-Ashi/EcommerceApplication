@@ -28,6 +28,7 @@ module.exports = {
             var OldUser = await db.get().
                 collection(names.USERCOLLECTIONS).findOne({ email: UserDetails.email })
             if (OldUser) {
+                resolve(true)
                 console.log('you have to loggin ');
 
             } else {
@@ -46,8 +47,10 @@ module.exports = {
                 console.log(UserDetails);
                 db.get().collection(names.USERCOLLECTIONS).insertOne(UserDetails).then((insertedId) => {
                     //resolve(insertedId.insertedId)
+                    resolve(insertedId)
                 })
             }
+            
         })
 
 
@@ -199,7 +202,7 @@ module.exports = {
 
 
                 ]).toArray()
-            /// console.log(CartItems, "Cartitems checking")
+            //console.log(CartItems, "Cartitems checking")
             resolve(CartItems)
             // console.log(CartItems, "matched products");
         })
