@@ -67,23 +67,40 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
 
 router.post('/login', (req, res) => {
   UserHelper.LogIn(req.body).then((user) => {
-    //console.log(user,'new');
-    if (user.UserStatus == true) {
+    console.log(user,'new');
+    if (user.UserStatus == true && user.UserId.UserAccess=="Unblocked") {
       req.session.userID = user.UserId
       req.session.status = true
       console.log(req.session.userID, "session");
       res.redirect('/')
     } else {
-      //console.log("are you workifngi")
-      res.render('users/Signup')
+     
+       if(user.status== false) {
+        var UserStatus="Password or email is incorrect"
+        
+        res.render('users/Login',{UserStatus})
+       } 
+       if(user.NotExist===false){
+        console.log('nocc')
+        var UserStatus='You have no account'
+        res.render('users/Login',{UserStatus})
+       }
 
-    }
+       if(user.blocked){
+        var UserStatus='You were blocked'
+        res.render('users/Login',{UserStatus})
+       }
+   
+     }
+    
 
-
-
-  })
-
+    })
 })
+
+
+  
+
+
 router.get('/signup', (req, res) => {
   console.log(req.query, "quwert");
 

@@ -70,17 +70,27 @@ module.exports = {
                 bcrypt.compare(UserDetails.password, user.password).
                     then((result) => {
                         console.log(result,);
+                        
 
                         if (result) {
+                            var blocked=''
+                            if(user.UserAccess=='blocked'){
+                                blocked=true
+
+                            }
 
                             //userobj.userStatus=true
                             Userobject.UserId = user
+                            Userobject.blocked=blocked
+                            
                             Userobject.UserStatus = true
+
                             console.log("logged successfully");
                             resolve(Userobject)
                             console.log(Userobject, "mat");
                         } else {
                             console.log('loggin failed');
+                            
                             resolve({ status: false })
                         }
                     })
@@ -88,8 +98,9 @@ module.exports = {
 
 
             } else {
-                resolve({ status: false })
-                console.log('user cannot found');
+               // var NotExist="you have no account"
+                resolve({NotExist:false})
+                
             }
             // rejects(user)
         })
