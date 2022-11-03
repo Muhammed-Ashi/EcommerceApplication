@@ -67,7 +67,7 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
 
 router.post('/login', (req, res) => {
   UserHelper.LogIn(req.body).then((user) => {
-    console.log(user,'new');
+   
     if (user.UserStatus == true && user.UserId.UserAccess=="Unblocked") {
       req.session.userID = user.UserId
       req.session.status = true
@@ -140,7 +140,6 @@ router.get('/cart-page', (req, res) => {
     res.render("users/cartpage", { CartItems, UserId,length })
   
 
-    console.log(length, "cartid che");
 
 
 
