@@ -486,7 +486,7 @@ module.exports = {
         return new Promise((resolve, rejcet) => {
             console.log(OrderId, "vannkmnp");
             var option = {
-                amount: TotalAmount,
+                amount: TotalAmount*100,
                 currency: "INR",
                 receipt: " " + OrderId
             };
