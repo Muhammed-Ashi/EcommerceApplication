@@ -3,15 +3,15 @@
 <script src="https://unpkg.com/js-image-zoom/js-image-zoom.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/js-image-zoom/js-image-zoom.min.js"></script>
 <div class="row" style="margin-right: ;margin-left: ;">
-    <div class="col-lg-12" style="background-color: rgb(73, 46, 46); ;">
+    <div class="col-lg-12 col-sm-12" style="background-color: rgb(73, 46, 46); ;">
         <div class="row">
             
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-sm-3">
                 <h1><a href="/" style="color: white;">DeoStore</a>
             </h1 >
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-sm-3">
                 <div class="input-group" style="padding-top: 3%;">
                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                         aria-describedby="search-addon" />
@@ -20,9 +20,9 @@
             </div>
 
             
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-sm-3">
             <div class="row">
-                <div class="col-lg-12" style="padding-top:0px ;">
+                <div class="col-lg-12 col-sm-12" style="padding-top:0px ;">
                     <button  type="button  "
                         style=" margin-top: 2%; background-color:  rgb(73, 46, 46);border-color:white;  cursor: pointer; border-radius: 30%;  color:white ;">
                         <svg style="color:white ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -54,7 +54,7 @@
         </div>
 
 
-            <div class="col-lg-1" style="padding-left: 10%;">
+            <div class="col-lg-1 col-sm-1" style="padding-left: 10%;">
 
                 <div class="dropdown show" style=" height: ; max-width: 20%;">
                     <a style="background-color:rgb(73, 46, 46);" class="btn btn-secondary dropdown-toggle"
@@ -81,10 +81,10 @@
 </div>
 
 <div class="row" style=" background-color:">
-    <div class="col-lg-5" style="margin-top: 1%; margin-left: 5%;  background-color: white; ">
+    <div class="col-lg-5 col-sm-5" style="margin-top: 1%; margin-left: 5%;  background-color: white; ">
         <div class="row">
 
-            <div class="col-lg-2"
+            <div class="col-lg-2 col-sm-2"
                 style=" margin-top: 10%; background-color:rgba(32, 31, 31, 0.747); border-style:double ; height: 300%;">
                 <div class="row" style="border-style: groove ;"><img id="FirstImage" style="width: 100%;"
                         src="/images/{{Product.Image.[0]}}" alt=""></div>
@@ -96,34 +96,34 @@
                 </div>
 
             </div>
-            <div id="img-container" class="col-lg-9" style="border-style: ;"> <img id="y" style="border-style: groove; 
+            <div id="img-container" class="col-lg-9 col-sm-9" style="border-style: ;"> <img id="y" style="border-style: groove; 
             " src="/images/{{Product.Image.[0]}}" alt=""></div>
 
         </div>
         <div class="row" style="margin-top: 3%;">
-            <div class="col-lg-4" style=" margin-left: 27%;">
+            <div class="col-lg-4 col-sm-4" style=" margin-left: 27%;">
                 <button onclick="AddToCart('{{Product._id}}', '{{Product.product.price}}')" class="btn btn-primary">Add to Cart</button>
             </div>
-            <div class="col-lg-4" style=" margin-left:% ;">
+            <div class="col-lg-4 col-sm-4" style=" margin-left:% ;">
                 <button class="btn btn-danger" style=>Buy Now</button>
 
             </div>
         </div>
 
     </div>
-    <div class="col-lg-6" id="divhide" style="background-color:white; margin-top:1% ;">
+    <div class="col-lg-6 col-sm-6" id="divhide" style="background-color:white; margin-top:1% ;">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-sm-12">
                 <h3> {{Product.product.name}}</h3>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-sm-12">
                 <h1>₹{{Product.product.price}} </h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12"> <button
+            <div class="col-lg-12 col-sm-12"> <button
                     style="background-color: rgb(16, 44, 16); width: 5%; border-radius: 100%;  "><span
                         style="margin-right: 50px;"><img style="width: 100%;" src="/images/images.png" alt="">
                     </span><span style=" color: white;">4</span></button> 3,07,534 ratings and 35,754 reviews </div>
@@ -131,7 +131,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-sm-12">
                 <h6>Available offers</h6><br>
 
                 <h6>Partner Offer </h6> Buy this product and Get Extra 10% Up to ₹500 off on Home & Kitchen Appliances
@@ -146,7 +146,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-sm-12">
                 <form action="">
                     <h5 style="color: rgb(65, 65, 65);"> <span><img src="/images/download.svg" alt=""></span> Deliver to
                     </h5>
@@ -156,7 +156,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-sm-12">
                 <div>
                     <h5>Usually delivered in 7 days</h5>
                 </div>
@@ -164,31 +164,31 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-1">
+            <div class="col-lg-1 col-sm-1">
                 <h6 style="margin-top: 17%;">Size</h6>
             </div>
 
-            <div class="col-lg-2" style="">
+            <div class="col-lg-2 col-sm-2" style="">
                 <button style="border-color: rgb(75, 29, 29); border-radius: 20%;">
                     <h6>S</h6>
                 </button>
             </div>
 
 
-            <div class="col-lg-2">
+            <div class="col-lg-2 col-sm-2">
                 <button style="border-color: rgb(75, 29, 29);  border-radius: 20%;">
                     <h6>M</h6>
                 </button>
             </div>
 
-            <div class="col-lg-2">
+            <div class="col-lg-2 col-sm-2">
                 <button style="border-color: rgb(75, 29, 29);  border-radius: 20%;">
                     <h6>L</h6>
                 </button>
             </div>
 
 
-            <div class="col-lg-2">
+            <div class="col-lg-2 col-sm-2">
                 <button style="border-color: rgb(75, 29, 29);  border-radius: 20%;">
                     <h6>XL</h6>
                 </button>

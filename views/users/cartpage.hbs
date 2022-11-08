@@ -1,13 +1,13 @@
 {{#if CartItems}}
 <div class="row" style="margin-right: ;margin-left: ;">
-    <div class="col-lg-12" style="background-color: rgb(73, 46, 46); ;">
+    <div class="col-lg-12 col-sm-12" style="background-color: rgb(73, 46, 46); ;">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-sm-3">
                  <h1><a href="/" style="color: white;margin-left:9% ">DeoStore</a>
             </h1 >
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-sm-6">
                 <div class="input-group" style="padding-top: 3%;">
                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                         aria-describedby="search-addon" />
@@ -16,7 +16,7 @@
             </div>
 
 
-            <div class="col-lg-3" style="padding-left: 10%;">
+            <div class="col-lg-3 col-sm-3" style="padding-left: 10%;">
 
                 <div class="dropdown show" style=" height: ; max-width: 20%;">
                     <a style="background-color:rgb(73, 46, 46);" class="btn btn-secondary dropdown-toggle"
@@ -42,7 +42,7 @@
     </div>
 </div>
 
-<div class="col-lg-4" style=" background-color: white; float:right  ; margin-right: 1%; margin-top: 5%; padding-bottom:3% ;">
+<div class="col-lg-4 col-sm-5" style=" background-color: white; float:right  ; margin-right: 1%; margin-top: 5%; padding-bottom:3% ;">
     <div style="margin-left: 10px;">
         <h5 style="color: darkgray;">PRICE DETAILS</h5><hr>
     
@@ -62,7 +62,7 @@
 
 <div class="row">
 
-    <div class="col-lg-11" style="background-color: white; margin-left: 3%; margin-top: 1%;">
+    <div class="col-lg-11 col-sm-12" style="background-color: white; margin-left: 3%; margin-top: 1%;">
         <div style=" margin-top: 1% ; margin-bottom: 7%;">
             <button
                 style="   float: right; border-radius: 11%; box-shadow: 80ch; background-color: white; font-size: 130%; color:rgb(65, 40, 9) ;">Enter
@@ -72,16 +72,16 @@
     
 
      {{#each CartItems}}
-    <div class="col-lg-11" style="background-color: white; margin-top: 1%; margin-left: 3%;">
+    <div class="col-lg-11 col-sm-12" style="background-color: white; margin-top: 1%; margin-left: 3%;">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-sm-3">
 
                 <div class="" style="">
                     <img style="width: 50%; margin-top:22% ;" src="/images/{{this.prs.Image.[0]}}" alt="">
                 </div>
 
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-sm-6">
                 <h6>{{this.prs.product.name}} <br>Bue <br>amt fasion</h6>
                 <h5 class="" ><span class="{{this.item}}">₹{{this.Price}}</span></h5>
             </div>
