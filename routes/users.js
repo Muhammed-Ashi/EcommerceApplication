@@ -60,7 +60,7 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
     console.log(req.user, "iam that");
     req.session.status = true
     req.session.userID = req.user
-    res.redirect('')
+    res.redirect('/')
   }
 
 })
@@ -259,8 +259,8 @@ router.get('/ChooseAddress/:id', (req, res) => {
 router.post('/PlaceOrder', async (req, res) => {
  
   var Address = await UserHelper.SelectAddress(req.session.userID._id)
-  
-  if(Address){
+  console.log(Address,"njan naayinte o")
+ 
     var TotalPrice = Address.Product[0].TotalPrice
     console.log(Address.Product[0].TotalPrice)
     UserHelper.PlaceOrder(req.session.userID._id, Address)
@@ -281,9 +281,7 @@ router.post('/PlaceOrder', async (req, res) => {
         }
       })
   
-  }else{
-    res.redirect('/address')
-  }
+  
  
   //console.log(Address,"new ");
 

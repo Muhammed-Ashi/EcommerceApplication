@@ -380,7 +380,7 @@ module.exports = {
     },
 
     SelectAddress: (UserId) => {
-        console.log(UserId, 'fpr address');
+        //console.log(UserId, 'fpr address');
         return new Promise(async (resolve, reject) => {
             var Address = await db.get()
                 .collection(names.ADDRESS).findOne({ UserId: ObjectID(UserId) })
@@ -428,7 +428,7 @@ module.exports = {
                 console.log(Cart, "njan")
                 resolve(Items)
             } else {
-                resolve({Req:false})
+                resolve(null)
             }
         })
 
